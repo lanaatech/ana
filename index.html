@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#F9CBD6" />
+    <title>Para Ana Carolina ♡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --rose-quartz: #f9cbd6;
+        --blush: #f2afbc;
+        --red-wine: #9e182b;
+        --oat-milk: #f2e0d2;
+        --ink: #3b0c13;
+        --muted: #854d56;
+        --shadow: 0 18px 50px rgba(158, 24, 43, 0.12);
+        --mono: 'DM Mono', monospace;
+        --serif: 'Playfair Display', serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: radial-gradient(
+            circle at 10% 10%,
+            #f9cbd6aa,
+            transparent 30rem
+          ),
+          radial-gradient(circle at 90% 30%, #f2afbcaa, transparent 32rem),
+          var(--oat-milk);
+        font-family: Quicksand, sans-serif;
+        overflow-x: hidden;
+      }
+
+      body.modal-open {
+        overflow: hidden;
+      }
+
+      button {
+        font: inherit;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .grain {
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.4rem 1rem;
+        max-width: 1180px;
+        margin: auto;
+        padding: 1.5rem;
+        font: 0.72rem var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .mark {
+        color: var(--red-wine);
+        font-weight: 500;
+      }
+
+      .tiny-heart {
+        font-size: 1.15rem;
+      }
+
+      /* BORBOLETAS FLUTUANTES */
+      .float-butterfly {
+        position: absolute;
+        pointer-events: none;
+        animation: floatBob 6s ease-in-out infinite alternate;
+        z-index: 5;
+      }
+
+      .bf-pink {
+        width: 55px;
+        opacity: 0.85;
+      }
+
+      .bf-red {
+        width: 65px;
+        opacity: 0.9;
+      }
+
+      .bf1 {
+        top: 8%;
+        left: 5%;
+        animation-duration: 5s;
+      }
+      .bf2 {
+        top: 15%;
+        right: 7%;
+        animation-duration: 7s;
+        animation-delay: -2s;
+      }
+      .bf3 {
+        bottom: 20%;
+        left: 8%;
+        animation-duration: 6s;
+        animation-delay: -3s;
+      }
+      .bf4 {
+        bottom: 12%;
+        right: 6%;
+        animation-duration: 5.5s;
+        animation-delay: -1s;
+      }
+
+      @keyframes floatBob {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-18px) rotate(6deg);
+        }
+        100% {
+          transform: translateY(-8px) rotate(-4deg);
+        }
+      }
+
+      .hero {
+        min-height: 75vh;
+        display: grid;
+        place-items: center;
+        padding: 2rem 1.25rem 4rem;
+        position: relative;
+        text-align: center;
+      }
+
+      .hero-inner {
+        width: min(780px, 100%);
+        position: relative;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 0.55rem 0.95rem;
+        border: 1px solid var(--blush);
+        border-radius: 999px;
+        color: var(--red-wine);
+        background: rgba(255, 255, 255, 0.7);
+        font: 0.7rem var(--mono);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 500;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 9vw, 6.2rem);
+        line-height: 1.02;
+        letter-spacing: -0.055em;
+        margin: 1.5rem 0 1.2rem;
+        color: var(--red-wine);
+        overflow-wrap: break-word;
+      }
+
+      h1 em {
+        font-style: italic;
+      }
+
+      .hero p {
+        max-width: 540px;
+        margin: auto;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+
+      /* CONTADOR RETRÔ */
+      .countdown {
+        margin: 2.8rem auto 0;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 90px));
+        gap: 1.2rem;
+        justify-content: center;
+      }
+
+      .flip-card {
+        background: var(--red-wine);
+        color: var(--oat-milk);
+        border-radius: 12px;
+        padding: 0.8rem 0.4rem;
+        box-shadow: 0 12px 25px rgba(158, 24, 43, 0.25);
+        position: relative;
+      }
+
+      .flip-card::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: rgba(242, 224, 210, 0.25);
+      }
+
+      .flip-val {
+        font: 500 2.4rem var(--mono);
+        display: block;
+        line-height: 1;
+      }
+
+      .flip-label {
+        font: 0.62rem var(--mono);
+        color: var(--rose-quartz);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-top: 0.6rem;
+        display: block;
+      }
+
+      .section {
+        padding: 5rem 1.25rem;
+      }
+
+      .section-head {
+        text-align: center;
+        max-width: 650px;
+        margin: 0 auto 3rem;
+      }
+
+      .section-head p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .kicker {
+        font: 0.7rem var(--mono);
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+        color: var(--red-wine);
+      }
+
+      h2 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1.08;
+        margin: 0.8rem 0 1rem;
+        letter-spacing: -0.035em;
+        color: var(--red-wine);
+      }
+
+      /* LINHA DO TEMPO */
+      .timeline {
+        max-width: 850px;
+        margin: auto;
+        position: relative;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--blush);
+      }
+
+      .moment {
+        width: 50%;
+        padding: 0 2.4rem 2.5rem 0;
+        position: relative;
+      }
+
+      .moment:nth-child(even) {
+        margin-left: 50%;
+        padding: 0 0 2.5rem 2.4rem;
+      }
+
+      .moment::after {
+        content: '♡';
+        position: absolute;
+        right: -13px;
+        top: 1.5rem;
+        width: 26px;
+        height: 26px;
+        display: grid;
+        place-items: center;
+        background: var(--oat-milk);
+        color: var(--red-wine);
+        font-size: 1.15rem;
+        border-radius: 50%;
+        border: 1px solid var(--blush);
+      }
+
+      .moment:nth-child(even)::after {
+        left: -13px;
+        right: auto;
+      }
+
+      .memory-card {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid var(--rose-quartz);
+        border-radius: 18px;
+        padding: 1.4rem;
+        box-shadow: var(--shadow);
+        transform: rotate(-0.7deg);
+      }
+
+      .moment:nth-child(even) .memory-card {
+        transform: rotate(0.7deg);
+      }
+
+      .memory-img-box {
+        width: 100%;
+        height: 200px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--rose-quartz);
+        margin: 0.8rem 0;
+        border: 1px solid var(--blush);
+      }
+
+      .memory-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .memory-card p {
+        margin: 0;
+        line-height: 1.75;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .sticker {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.35rem 0.6rem;
+        border-radius: 5px;
+        background: var(--rose-quartz);
+        color: var(--red-wine);
+        font-size: 0.72rem;
+        font-weight: 700;
+        transform: rotate(-2deg);
+      }
+
+      /* SURPRESAS */
+      .surprises-grid {
+        max-width: 900px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+
+      .surprise-pill {
+        background: rgba(255, 255, 255, 0.85);
+        border: 2px solid var(--rose-quartz);
+        border-radius: 999px;
+        padding: 1rem 1.6rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      .surprise-pill.ready-to-open {
+        background: #fff;
+        border-color: var(--red-wine);
+        box-shadow: 0 8px 22px rgba(158, 24, 43, 0.2);
+        animation: pulsePill 2s infinite alternate;
+      }
+
+      @keyframes pulsePill {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.02);
+        }
+      }
+
+      .surprise-pill.unlocked {
+        background: var(--rose-quartz);
+        border-color: var(--red-wine);
+        box-shadow: 0 10px 25px rgba(158, 24, 43, 0.15);
+      }
+
+      .surprise-pill.locked {
+        opacity: 0.65;
+        cursor: not-allowed;
+        background: rgba(249, 203, 214, 0.3);
+      }
+
+      .pill-icon {
+        flex: none;
+        font-size: 1.5rem;
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(158, 24, 43, 0.1);
+      }
+
+      .ready-to-open .pill-icon {
+        background: var(--blush);
+        color: #fff;
+      }
+      .unlocked .pill-icon {
+        background: var(--red-wine);
+        color: #fff;
+      }
+
+      .pill-info {
+        text-align: left;
+        min-width: 0;
+      }
+
+      .pill-tag {
+        font: 0.62rem var(--mono);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--red-wine);
+      }
+
+      .ready-to-open .pill-tag {
+        font-weight: bold;
+      }
+
+      .pill-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-top: 0.15rem;
+        color: var(--ink);
+      }
+
+      /* MODAL DO PRESENTE (rolável, com botão sempre visível) */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(59, 12, 19, 0.6);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: max(1rem, env(safe-area-inset-top))
+          max(1rem, env(safe-area-inset-right))
+          max(1rem, env(safe-area-inset-bottom))
+          max(1rem, env(safe-area-inset-left));
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+
+      .modal-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 520px;
+        max-height: 100%;
+        background: var(--oat-milk);
+        border-radius: 24px;
+        border: 2px solid var(--rose-quartz);
+        padding: clamp(1.4rem, 5vw, 2.5rem);
+        box-shadow: 0 25px 60px rgba(59, 12, 19, 0.3);
+        text-align: center;
+        transform: translateY(20px);
+        transition: transform 0.3s;
+      }
+
+      .modal-overlay.open .modal-card {
+        transform: translateY(0);
+      }
+
+      .modal-x {
+        position: absolute;
+        top: 0.6rem;
+        right: 0.6rem;
+        width: 36px;
+        height: 36px;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(158, 24, 43, 0.1);
+        color: var(--red-wine);
+        font-size: 1.2rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .lock-icon-anim {
+        flex: none;
+        align-self: center;
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+      }
+
+      .modal-title {
+        flex: none;
+        color: var(--red-wine);
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        margin: 0.4rem 0;
+      }
+
+      .gift-reveal {
+        display: none;
+        min-height: 0;
+        flex: 1;
+        flex-direction: column;
+        text-align: left;
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      .gift-reveal.show {
+        display: flex;
+      }
+
+      .gift-body {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        padding-right: 0.3rem;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .btn-modal {
+        flex: none;
+        background: var(--red-wine);
+        color: var(--oat-milk);
+        border: 0;
+        padding: 0.9rem 1.8rem;
+        border-radius: 999px;
+        font-weight: 700;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 1.2rem;
+        transition: 0.2s;
+      }
+
+      .btn-modal:hover {
+        background: var(--blush);
+        color: var(--ink);
+      }
+
+      /* CONTEÚDO DOS PRESENTES */
+      .gift-title {
+        color: var(--red-wine);
+        font-size: clamp(1.45rem, 5vw, 1.8rem);
+        margin: 0 0 0.8rem;
+      }
+
+      .gift-title.big {
+        font-size: clamp(1.6rem, 6vw, 2rem);
+      }
+
+      .gift-text {
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0 0 0.8rem;
+      }
+
+      .gift-box {
+        background: #fff;
+        padding: 1.2rem;
+        border-radius: 14px;
+        border: 1px solid var(--blush);
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .gift-emoji {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .gift-box strong {
+        color: var(--red-wine);
+        font-size: 1.1rem;
+      }
+
+      .gift-box p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin: 0.4rem 0 0;
+      }
+
+      .gift-link {
+        display: inline-block;
+        margin-top: 0.8rem;
+        color: var(--red-wine);
+        font-weight: bold;
+        font-size: 0.9rem;
+        text-decoration: underline;
+      }
+
+      .airbnb-card {
+        background: linear-gradient(135deg, var(--red-wine), #801020);
+        color: #fff;
+        border-radius: 18px;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .airbnb-card .gift-emoji {
+        font-size: 2.5rem;
+      }
+
+      .airbnb-card h4 {
+        font: 500 1.6rem var(--serif);
+        margin: 0.4rem 0 0.6rem;
+      }
+
+      .airbnb-card p {
+        font-size: 0.9rem;
+        opacity: 0.95;
+        margin: 0;
+      }
+
+      .btn-airbnb {
+        background: var(--oat-milk);
+        color: var(--red-wine);
+        padding: 0.75rem 1.4rem;
+        border-radius: 999px;
+        font-weight: bold;
+        margin-top: 1rem;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      /* CADEADO ABRINDO */
+      .unlock-active {
+        animation: unlockSequence 0.8s ease forwards;
+      }
+
+      @keyframes unlockSequence {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+        30% {
+          transform: scale(1.3) rotate(-25deg);
+        }
+        60% {
+          transform: scale(1.3) rotate(25deg);
+        }
+        80% {
+          transform: scale(1.1) rotate(0deg);
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+
+      .footer {
+        text-align: center;
+        padding: 3rem 1rem 4rem;
+        font: 0.7rem var(--mono);
+        color: var(--muted);
+      }
+
+      .footer .heart {
+        color: var(--red-wine);
+      }
+
+      .confetti {
+        position: fixed;
+        z-index: 200;
+        line-height: 1;
+        pointer-events: none;
+        will-change: transform, opacity;
+      }
+
+      .test-mode-btn {
+        background: none;
+        border: 1px dashed var(--red-wine);
+        color: var(--red-wine);
+        padding: 0.5rem 0.9rem;
+        border-radius: 999px;
+        font: 0.65rem var(--mono);
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+
+      /* TABLET / CELULAR */
+      @media (max-width: 680px) {
+        .topbar {
+          padding: 1rem 1.1rem;
+          font-size: 0.64rem;
+        }
+        .hero {
+          padding: 1rem 1rem 3rem;
+          min-height: auto;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+        .eyebrow {
+          font-size: 0.62rem;
+          padding: 0.5rem 0.8rem;
+        }
+
+        .bf-pink {
+          width: 34px;
+        }
+        .bf-red {
+          width: 40px;
+        }
+
+        .countdown {
+          gap: 0.5rem;
+          margin-top: 2rem;
+        }
+        .flip-card {
+          padding: 0.7rem 0.2rem;
+          border-radius: 10px;
+        }
+        .flip-val {
+          font-size: clamp(1.5rem, 8vw, 2rem);
+        }
+        .flip-label {
+          font-size: 0.5rem;
+          letter-spacing: 0.05em;
+          margin-top: 0.5rem;
+        }
+
+        .section {
+          padding: 3.5rem 1rem;
+        }
+        .section-head {
+          margin-bottom: 2rem;
+        }
+
+        .timeline::before {
+          left: 10px;
+        }
+
+        .moment,
+        .moment:nth-child(even) {
+          width: 100%;
+          margin-left: 0;
+          padding: 0 0 1.5rem 2.2rem;
+        }
+
+        .moment::after,
+        .moment:nth-child(even)::after {
+          left: -2px;
+          right: auto;
+          top: 1.3rem;
+        }
+
+        .memory-card {
+          padding: 1.1rem;
+        }
+        .memory-img-box {
+          height: min(62vw, 260px);
+        }
+
+        .surprises-grid {
+          grid-template-columns: 1fr;
+          gap: 0.9rem;
+        }
+        .surprise-pill {
+          padding: 0.85rem 1.1rem;
+          gap: 0.8rem;
+        }
+        .pill-tag {
+          font-size: 0.58rem;
+          letter-spacing: 0.05em;
+        }
+        .pill-title {
+          font-size: 1rem;
+        }
+
+        .modal-card {
+          border-radius: 20px;
+        }
+        .gift-box,
+        .airbnb-card {
+          padding: 1rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .float-butterfly,
+        .surprise-pill.ready-to-open {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grain"></div>
+
+    <!-- BORBOLETAS FLUTUANTES -->
+    <svg
+      class="float-butterfly bf-pink bf1"
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+    >
+      <path
+        id="bf"
+        d="M50 50 C20 10 0 40 30 65 C10 80 40 95 50 70 C60 95 90 80 70 65 C100 40 80 10 50 50 Z"
+        fill="#F2AFBC"
+      />
+    </svg>
+    <svg
+      class="float-butterfly bf-red bf2"
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+    >
+      <use href="#bf" fill="#9E182B" />
+    </svg>
+    <svg
+      class="float-butterfly bf-pink bf3"
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+    >
+      <use href="#bf" fill="#F9CBD6" />
+    </svg>
+    <svg
+      class="float-butterfly bf-red bf4"
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+    >
+      <use href="#bf" fill="#9E182B" />
+    </svg>
+
+    <header class="topbar">
+      <div class="mark">
+        edição especial de aniversário <span class="tiny-heart">♡</span>
+      </div>
+      <div>para Pretinha</div>
+    </header>
+
+    <main>
+      <!-- HERO COM CONTAGEM REGRESSIVA -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="eyebrow">✦ ANA CAROLINA - 18 ANOS ✦</div>
+          <h1>12 de Novembro,<br /><em>seu dia especial.</em></h1>
+          <p>
+            Uma contagem regressiva para comemorar quem você é. A cada dia, uma
+            nova surpresa se destrava.
+          </p>
+
+          <div class="countdown">
+            <div class="flip-card">
+              <span class="flip-val" id="cd-days">00</span
+              ><span class="flip-label">Dias</span>
+            </div>
+            <div class="flip-card">
+              <span class="flip-val" id="cd-hours">00</span
+              ><span class="flip-label">Horas</span>
+            </div>
+            <div class="flip-card">
+              <span class="flip-val" id="cd-mins">00</span
+              ><span class="flip-label">Minutos</span>
+            </div>
+            <div class="flip-card">
+              <span class="flip-val" id="cd-secs">00</span
+              ><span class="flip-label">Segundos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LINHA DO TEMPO -->
+      <section class="section" id="nossa-historia">
+        <div class="section-head">
+          <div class="kicker">nossa jornada · nos detalhes</div>
+          <h2>Para Relembrar</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="moment">
+            <div class="memory-card">
+              <div class="memory-img-box">
+                <img src="./ana (4).jpeg" alt="" loading="lazy" />
+              </div>
+              <p>
+                Depois de anos e de varias desculpas esfarrapadas, fui! E
+                naquele dia, percebi que ele não seria só mais um. Foi o um
+                grande marco, começo de uma historia.
+              </p>
+              <span class="sticker">plot twist favorito ♡</span>
+            </div>
+          </article>
+
+          <article class="moment">
+            <div class="memory-card">
+              <div class="memory-img-box">
+                <img src="./ana (3).jpeg" alt="" loading="lazy" />
+              </div>
+              <p>
+                E de repente, tinhamos um dia para celebrar e chamar de nosso.
+                Entre carinho, companhia e pequenos detalhes, mais uma lembrança
+                de um dia incrivel que guardo com muito amor.
+              </p>
+              <span class="sticker">amor, em sua forma mais pura ♡</span>
+            </div>
+          </article>
+
+          <article class="moment">
+            <div class="memory-card">
+              <div class="memory-img-box">
+                <img src="./ana (2).jpeg" alt="" loading="lazy" />
+              </div>
+              <p>
+                Nem todo momento especial precisa de uma data comemorativa. Às
+                vezes, e sabemos viver muito bem isso. Afinal o maior evento que
+                temos, somos simplesmente nós duas juntas.
+              </p>
+              <span class="sticker">o melhor da vida ♡</span>
+            </div>
+          </article>
+
+          <article class="moment">
+            <div class="memory-card">
+              <div class="memory-img-box">
+                <img src="./ana (1).jpeg" alt="" loading="lazy" />
+              </div>
+              <p>
+                Te amar é facil até nos dias mais dificies! Viver Ana Carolina
+                trás o riso fácil, companhia, segurança e a vontade de estar
+                perto.
+              </p>
+              <span class="sticker">a onça amansada ♡</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SURPRESAS -->
+      <section class="section" id="surpresas">
+        <div class="section-head">
+          <div class="kicker">Presentes secretos</div>
+          <h2>Surpresas 🎁</h2>
+          <p>
+            Um presente é pouco para uma moça tão gigante, então volte aqui a
+            cada dia e click no presente disponivel até que chegue o grande dia!
+          </p>
+        </div>
+
+        <div class="surprises-grid" id="grid-surpresas"></div>
+      </section>
+    </main>
+
+    <!-- MODAL DOS PRESENTES -->
+    <div
+      class="modal-overlay"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-day-title"
+    >
+      <div class="modal-card">
+        <button
+          class="modal-x"
+          type="button"
+          aria-label="Fechar"
+          onclick="closeModal()"
+        >
+          ✕
+        </button>
+        <span class="lock-icon-anim" id="modal-lock-icon">🔒</span>
+        <h3 class="modal-title" id="modal-day-title">Dia 01</h3>
+
+        <div class="gift-reveal" id="gift-area">
+          <div class="gift-body" id="gift-content"></div>
+          <button class="btn-modal" type="button" onclick="closeModal()">
+            Guardar no coração ♡
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      FEITO COM TODO O MEU AMOR <span class="heart">♥</span><br />
+      <span>Para Ana Carolina · Por Ilana</span><br />
+      <!-- <button class="test-mode-btn" type="button" onclick="toggleTestMode()"> -->
+        <!-- ⚡ Alternar Modo Teste (Desbloquear Tudo)-->
+      <!-- </button>-->
+    <!-- </footer>-->
+
+    <script>
+            const UNLOCK_HOUR = 8 // todo presente libera às 8h (horário do aparelho)
+            const BIRTHDAY = new Date('2026-11-12T00:00:00')
+
+            const $ = (id) => document.getElementById(id)
+
+            // ---------- Helpers de conteúdo dos presentes ----------
+            const gTitle = (text, big) => `<h3 class="gift-title${big ? ' big' : ''}">${text}</h3>`
+            const gText = (text) => `<p class="gift-text">${text}</p>`
+            const gBox = (emoji, title, body) => `
+              <div class="gift-box">
+                <span class="gift-emoji">${emoji}</span>
+                <strong>${title}</strong>
+                ${body}
+              </div>`
+
+            // ---------- Presentes (um por dia; a data libera às 8h) ----------
+            const gifts = [
+              {
+                date: '2026-11-07',
+                title: 'Presente 1',
+                html:
+                  gTitle('Para minha Ana 💌') +
+                  [
+                    'Seu dia está chegando e sou feliz por ter a oportunidade de celebrar a sua vida.',
+                    'Eu não consigo resumir o que sinto por você em fotos ou em palavras bonitas. Você faz parte da minha história de um jeito que não cabe em uma tela. E existe em mim um carinho enorme pelas lembranças que construímos e por tudo o que ainda podemos viver.',
+                    'Eu desejo que este novo ciclo te traga saúde, paz, realizações, motivos sorrir e liberdade para crescer, descansar, sonhar e recomeçar.',
+                    'Obrigada por cada lembrança, cada carinho, cada flor e cada pedacinho de vida que compartilhamos. Que venham novos lugares, novas histórias, mais risadas e momentos nossos.',
+                    'Com amor, Ilana ♡'
+                  ]
+                    .map(gText)
+                    .join('')
+              },
+              {
+                date: '2026-11-08',
+                title: 'Presente 2',
+                html:
+                  gTitle('Nosso Momento a Dois 🌹') +
+                  gText('Prepare o coração! Hoje você ganhou uma experiência feita sob medida para nós duas.') +
+                  gBox('🎟️', 'CUPOM: NOITE ROMÂNTICA', '<p>Com direito a jantar especial, vinho e toda a minha atenção dedicada a você.</p>')
+              },
+              {
+                date: '2026-11-09',
+                title: 'Presente 3',
+                html:
+                  gTitle('A Nova Habilitada! 🚗💨') +
+                  gText('Mais um passo enorme conquistado com muito orgulho. Mal posso esperar para rodar a cidade no seu passageiro!') +
+                  gBox('📜✨', 'VALE LAUDO DA AUTOESCOLA', '<p>Apoio total para dar esse grande passo rumo à sua carteira de motorista!</p>')
+              },
+              {
+                date: '2026-11-10',
+                title: 'Presente 4',
+                html:
+                  gTitle('Trilha Sonora da Nossa História 🎧') +
+                  gText('Reuni cada música que me lembra o seu sorriso, as nossas viagens e o nosso afeto.') +
+                  gBox(
+                    '🎶',
+                    'SUA PLAYLIST EXCLUSIVA',
+                    '<br><a class="gift-link" href="https://youtube.com/playlist?list=PLLvMkpqLaLuw&si=_nF48HHTuHB74RyD" target="_blank" rel="noopener">Clique para ouvir 🎵</a>'
+                  )
+              },
+              {
+                date: '2026-11-11',
+                title: 'Presente 5',
+                html:
+                  gTitle('Adoçando a Véspera 🍫') +
+                  gText('Porque o seu dia merece toda a doçura do mundo antes do aniversário!') +
+                  gBox('🍩', 'VALE SEU CHOCOLATE FAVORITO', '<p>Válido para o doce que você escolher entregar onde você estiver hoje!</p>')
+              },
+              {
+                date: '2026-11-12',
+                title: 'Presente 6',
+                html:
+                  gTitle('FELIZ 18 ANOS! 🎉✨', true) +
+                  gText('O grande dia chegou! Arruma as malas porque nosso presente principal é viajar juntas!') +
+                  `<div class="airbnb-card">
+                    <span class="gift-emoji">🏡✨</span>
+                    <h4>Nosso Refúgio no Airbnb</h4>
+                    <p>Um final de semana inesquecível reservado só para nós duas relaxarmos e comemorarmos a sua vida!</p>
+                    <a class="btn-airbnb" href="https://www.airbnb.com.br/rooms/1803076154297417846?guests=1&adults=1&s=67&unique_share_id=27488736-81ca-49dd-bfd7-7ec7bc431e54" target="_blank" rel="noopener">Ver Reserva da Viagem ✈️</a>
+                  </div>`
+              }
+            ]
+
+            // ---------- Estado e datas ----------
+            let testMode = false
+            let lastKey = ''
+            let animTimers = []
+            let animIndex = null
+
+            const unlockAt = (g) => new Date(`${g.date}T${String(UNLOCK_HOUR).padStart(2, '0')}:00:00`)
+            const formatDate = (g) => g.date.split('-').reverse().join('/')
+            const isRealReached = (i) => Date.now() >= unlockAt(gifts[i])
+            const isReached = (i) => testMode || isRealReached(i)
+            const reachedKey = () => gifts.map((_, i) => isReached(i)).join()
+
+            // ---------- Presentes já abertos (salvos no aparelho) ----------
+            const STORAGE_KEY = 'presente-ana-abertos'
+            const loadOpened = () => {
+              try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
+              } catch {
+                return []
+              }
+            }
+            const unlockedDays = new Set(
+              loadOpened().filter((i) => Number.isInteger(i) && gifts[i] && isRealReached(i))
+            )
+            const saveOpened = () => {
+              try {
+                // aberturas feitas só no modo teste (data ainda não chegou) não são salvas
+                localStorage.setItem(STORAGE_KEY, JSON.stringify([...unlockedDays].filter(isRealReached)))
+              } catch {}
+            }
+
+            // ---------- Contagem regressiva ----------
+            function updateCountdown() {
+              const diff = Math.max(0, BIRTHDAY - Date.now())
+              const parts = [diff / 864e5, (diff / 36e5) % 24, (diff / 6e4) % 60, (diff / 1e3) % 60]
+              ;['days', 'hours', 'mins', 'secs'].forEach((id, i) => {
+                $('cd-' + id).textContent = String(Math.floor(parts[i])).padStart(2, '0')
+              })
+            }
+
+            // ---------- Lista de presentes ----------
+            function renderSurprises() {
+              const grid = $('grid-surpresas')
+              grid.innerHTML = ''
+              lastKey = reachedKey()
+
+              gifts.forEach((g, i) => {
+                const reached = isReached(i)
+                const unlocked = unlockedDays.has(i)
+                const state = unlocked ? 'unlocked' : reached ? 'ready-to-open' : 'locked'
+                const tag = unlocked
+                  ? 'DESBLOQUEADO'
+                  : reached
+                  ? `LIBERADO NO DIA ${formatDate(g)}`
+                  : `DESBLOQUEIE NO DIA ${formatDate(g)}`
+
+                const pill = document.createElement('div')
+                pill.className = `surprise-pill ${state}`
+                pill.innerHTML = `
+                  <div class="pill-icon">${unlocked ? '🔓' : '🔒'}</div>
+                  <div class="pill-info">
+                    <div class="pill-tag">${tag}</div>
+                    <div class="pill-title">${g.title}</div>
+                  </div>`
+                pill.onclick = () => openGift(i)
+                grid.appendChild(pill)
+              })
+            }
+
+            // Atualiza a cada segundo; redesenha a lista só quando algum presente muda de estado (ex.: chegou 8h)
+            setInterval(() => {
+              updateCountdown()
+              if (lastKey !== reachedKey()) renderSurprises()
+            }, 1000)
+
+            // ---------- Modal ----------
+            function clearAnimation() {
+              animTimers.forEach(clearTimeout)
+              animTimers = []
+              $('modal-lock-icon').classList.remove('unlock-active')
+            }
+
+            function openGift(index) {
+              const g = gifts[index]
+              if (!isReached(index)) {
+                alert(`Este presente será liberado no dia ${formatDate(g)} às ${UNLOCK_HOUR}h ♡`)
+                return
+              }
+
+              clearAnimation()
+              const lock = $('modal-lock-icon')
+              const area = $('gift-area')
+
+              $('modal-day-title').textContent = `Dia 0${index + 1} — ${g.title}`
+              $('gift-content').innerHTML = g.html
+              $('gift-content').scrollTop = 0
+              $('modal').classList.add('open')
+              document.body.classList.add('modal-open')
+
+              if (unlockedDays.has(index)) {
+                lock.textContent = '🔓'
+                area.classList.add('show')
+                animIndex = null
+                return
+              }
+
+              lock.textContent = '🔒'
+              area.classList.remove('show')
+              animIndex = index
+
+              // cadeado gira -> abre -> confetes -> presente aparece
+              animTimers = [
+                setTimeout(() => lock.classList.add('unlock-active'), 200),
+                setTimeout(() => (lock.textContent = '🔓'), 500),
+                setTimeout(makeConfetti, 700),
+                setTimeout(() => {
+                  lock.classList.remove('unlock-active')
+                  unlockedDays.add(index)
+                  saveOpened()
+                  animIndex = null
+                  renderSurprises()
+                  area.classList.add('show')
+                }, 1000)
+              ]
+            }
+
+            function closeModal() {
+              // se fechar no meio da animação, o presente já conta como aberto
+              const pending = animIndex
+              clearAnimation()
+              if (pending !== null) {
+                unlockedDays.add(pending)
+                saveOpened()
+                animIndex = null
+                renderSurprises()
+              }
+              $('modal').classList.remove('open')
+              document.body.classList.remove('modal-open')
+            }
+
+            $('modal').addEventListener('click', (e) => {
+              if (e.target === e.currentTarget) closeModal()
+            })
+            document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape') closeModal()
+            })
+
+            //function toggleTestMode() {
+             // testMode = !testMode
+            //  if (!testMode) [...unlockedDays].forEach((i) => isRealReached(i) || unlockedDays.delete(i))
+            //  alert(testMode ? 'Modo Teste ATIVADO: Todos os dias estão liberados!' : 'Modo Teste DESATIVADO.')
+            //  renderSurprises()
+           // }
+
+            // Explosão de confetes saindo do cadeado, que depois caem (Web Animations API)
+            function makeConfetti() {
+              const symbols = ['♡', '♥', '✦', '✿', '💗', '✨', '🦋']
+              const colors = ['#9E182B', '#F2AFBC', '#F9CBD6']
+              const pick = (arr) => arr[Math.floor(Math.random() * arr.length)]
+              const box = $('modal-lock-icon').getBoundingClientRect()
+              const ox = box.width ? box.left + box.width / 2 : innerWidth / 2
+              const oy = box.width ? box.top + box.height / 2 : innerHeight / 2
+              const reach = Math.min(innerWidth, 560) * 0.45
+
+              for (let i = 0; i < (innerWidth < 680 ? 45 : 70); i++) {
+                const p = document.createElement('span')
+                p.className = 'confetti'
+                p.textContent = pick(symbols)
+                p.style.cssText = `left:${ox}px;top:${oy}px;color:${pick(colors)};font-size:${14 + Math.random() * 20}px`
+                document.body.appendChild(p)
+                if (!p.animate) {
+                  setTimeout(() => p.remove(), 100)
+                  continue
+                }
+
+                const angle = Math.random() * Math.PI * 2
+                const dist = 60 + Math.random() * reach
+                const dx = Math.cos(angle) * dist
+                const dy = Math.sin(angle) * dist - 50
+                const spin = (Math.random() - 0.5) * 720
+                const at = (x, y, rot, scale) =>
+                  `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${rot}deg) scale(${scale})`
+
+                p.animate(
+                  [
+                    { transform: at(0, 0, 0, 0.3), opacity: 1 },
+                    { transform: at(dx, dy, spin / 2, 1), opacity: 1, offset: 0.35 },
+                    { transform: at(dx * 1.15, dy + innerHeight * 0.6, spin, 1), opacity: 0 }
+                  ],
+                  { duration: 1800 + Math.random() * 1400, easing: 'ease-out', fill: 'forwards' }
+                ).onfinish = () => p.remove()
+              }
+            }
+
+            updateCountdown()
+            renderSurprises()
+    </script>
+  </body>
+</html>
